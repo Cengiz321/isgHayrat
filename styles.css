@@ -14,7 +14,7 @@
     max-width: 900px;
     margin: auto;
     padding: 20px;
-    padding-bottom: 100px;
+    padding-bottom: 120px;
     background: white;
     min-height: 100vh;
   }
@@ -47,7 +47,7 @@
   
   .controls {
     position: fixed;
-    bottom: 0;
+    bottom: 50px;
     left: 0;
     width: 100%;
     background: #fff;
@@ -105,6 +105,9 @@
     color: #aaa;
     font-size: 0.8rem;
     z-index: 101;
+    background: rgba(255,255,255,0.8); 
+    padding: 2px 5px;
+    border-radius: 3px;
   }
   
   .loading {
@@ -113,7 +116,7 @@
     font-size: 1.2rem;
     color: #666;
   }
-  
+
   .error-message {
     color: red;
     padding: 20px;
@@ -121,4 +124,18 @@
     background-color: #ffeeee;
     border-radius: 5px;
     margin: 10px 0;
+  }
+
+  @media (max-width: 600px) {
+    .controls {
+      bottom: 40px;
+      padding: 8px;
+    }
+    .controls button {
+      padding: 8px 15px;
+      font-size: 0.9rem;
+    }
+    .designer {
+      font-size: 0.7rem;
+    }
   }
