@@ -218,7 +218,7 @@ d. Bir yerden püsküren yakıtın yanması
 a. Tankın soğuması nedeniyle kırılması
 b. Tankın emniyet ventilinin bozulması nedeniyle patlaması
 c. Tankın manometresinin bozulması nedeniyle patlaması
-d. Tankın içindeki sıvının ısınarak kaynamaya başlaması ve hızlı buharlaşma sonucu\nyükselen basıncın patlamaya neden olması
+d. Tankın içindeki sıvının ısınarak kaynamaya başlaması ve hızlı buharlaşma sonucu yükselen basıncın patlamaya neden olması
 544.Yangın söndürücüler yerden kaç cm yüksekliğe asılmalıdır?
 a. 90
 b. 70
