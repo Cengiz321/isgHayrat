@@ -5,27 +5,40 @@ let shuffledIndexes = [];
 let correctClicked = false;
 let correctShown = false;
 
-const QUESTIONS_URL = 'https://raw.githubusercontent.com/Cengiz321/isgHayrat/refs/heads/main/questions/questions.txt';
-const ANSWERS_URL = 'https://raw.githubusercontent.com/Cengiz321/isgHayrat/refs/heads/main/questions/answers.txt';
+const QUESTIONS_URL = 'questions/questions.txt';
+const ANSWERS_URL = 'questions/answers.txt';
 
 document.addEventListener("DOMContentLoaded", () => {
-  toggleShuffleInputs();
-  loadData();
+  if (!document.getElementById('questionText') || !document.getElementById('options')) {
+    console.error("HTML elementleri bulunamadı!");
+    showError("Sistem hatası: Sayfa düzgün yüklenemedi");
+    return;
+  }
+  
+  loadData().catch(error => {
+    console.error("Yükleme hatası:", error);
+    showError("Sorular yüklenirken hata oluştu: " + error.message);
+  });
 });
+
+function showError(message) {
+  const questionBox = document.getElementById('questionBox');
+  if (questionBox) {
+    questionBox.innerHTML = `<div class="error-message">${message}</div>`;
+  }
+}
 
 async function loadData() {
   try {
-    document.getElementById('questionBox').innerHTML = '<div class="loading">Sorular yükleniyor...</div>';
+    document.getElementById('questionText').innerText = "Sorular yükleniyor...";
     
-    // Soru ve cevapları aynı anda yükle
     const [questionsResponse, answersResponse] = await Promise.all([
       fetch(QUESTIONS_URL),
       fetch(ANSWERS_URL)
     ]);
     
-    if (!questionsResponse.ok || !answersResponse.ok) {
-      throw new Error('Dosyalar yüklenirken hata oluştu');
-    }
+    if (!questionsResponse.ok) throw new Error("Sorular dosyası bulunamadı (404)");
+    if (!answersResponse.ok) throw new Error("Cevaplar dosyası bulunamadı (404)");
     
     const questionsText = await questionsResponse.text();
     const answersText = await answersResponse.text();
@@ -33,10 +46,13 @@ async function loadData() {
     questions = parseFullBlocks(questionsText);
     answers = parseAnswers(answersText);
     
+    if (questions.length === 0) throw new Error("Dosyada hiç soru bulunamadı");
+    
     showQuestion();
-  } catch (error) {
-    document.getElementById('questionBox').innerHTML = `<div class="loading">Hata: ${error.message}</div>`;
-    console.error('Yükleme hatası:', error);
+  } catch(error) {
+    console.error("Hata:", error);
+    showError(`Yükleme hatası: ${error.message}`);
+    throw error;
   }
 }
 
