@@ -124,12 +124,12 @@ a. Volkan
 b. Sürtünme
 c. Kıvılcım
 d. Elektrik
-526.Aşağıdakilerden hangisi yapay ısı kaynağıdır?
+526-1.Aşağıdakilerden hangisi yapay ısı kaynağıdır?
 a. Güneş
 b. Volkan
 c. Kaynak arkı
 d. Yıldırım
-526.Aşağıdakilerden hangisi yangın üçgenini oluşturan unsurlardan biri değildir?
+526-2.Aşağıdakilerden hangisi yangın üçgenini oluşturan unsurlardan biri değildir?
 a. Yanmış madde
 b. Yanıcı madde
 c. Isı
