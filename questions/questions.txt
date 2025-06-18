@@ -3113,8 +3113,7 @@ d. Kilitlemeli koruyucular
 1114.Transportörlerin aşağıdaki özelliklerinden hangisi yanlıştır?
 a. Transportörlerin operatörün kumanda görüş sahası dışında bulunması halinde diğer işçilerioperatörün harekete geçeceğini bildirmesini sağlayacak sesli veya ışıklı bir tertibatkurulacaktır.
 b. Yerden 180 santimetreden fazla yüksekte bulunan taşıma yollarının yanları,parçadüşmelerine karşı uygun şekilde korunacaktır.
-c. Şişe kavanoz ve benzerlerinin benzerlerinin devrilme veya düşmelerini önlemek için
-tablalı transportörlerin taşıma yüzeylerinin her iki tarafına uygun yükseklikte koruyucularyapılacaktır.
+c. Şişe kavanoz ve benzerlerinin benzerlerinin devrilme veya düşmelerini önlemek için tablalı transportörlerin taşıma yüzeylerinin her iki tarafına uygun yükseklikte koruyucularyapılacaktır.
 d. Üzerinden geçmek zorunluluğu bulunan hallerde,güvenliği sağlayan geçitler yapılacaktır.
 1115.Kaldırma makinalarında yüklerin kaldırılmasında halkalı ve levhalı zincirler kullanılır.Zincirler için aşağıda verilen özelliklerden hangisi yanlıştır?
 a. Zincirin baklalarında ezilme,aşınma veya çatlaklık varsa zincir değiştirilmelidir
