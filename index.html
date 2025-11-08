@@ -13,7 +13,12 @@
       <div class="nav-toggle" onclick="toggleNavOptions()">
         <i class="fas fa-chevron-up" id="navToggleIcon"></i>
       </div>
+      <div class="theme-toggle" onclick="toggleDarkMode()">
+          <i class="fas fa-moon" id="themeIcon"></i>
+        </div>
+      
       <div class="nav-options" id="navOptions">
+        <button onclick="showTermSelection()">Dönem Değiştir</button> <br>
         <div class="goto-container" id="gotoContainer">
           <label>Soruya git: <input type="number" id="gotoQuestion" min="1" /></label>
           <button onclick="goToQuestion()">Git</button>
@@ -71,12 +76,28 @@
     <button onclick="nextQuestion()">Sonraki</button>
   </div>
   
-  <div class="social-links">
-    <a href="mailto:huseyin321cengiz@gmail.com" class="social-icon"><i class="fas fa-envelope"></i></a>
-    <a href="https://instagram.com/cengiz.py" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+  <div class="bottomInfo">
+    <div class="social-links">
+      <a href="https://www.linkedin.com/in/huseyincengiz321" target="_blank" class="social-icon"><i class="fa-brands fa-linkedin"></i></a>
+      <a href="mailto:huseyin321cengiz@gmail.com" class="social-icon"><i class="fas fa-envelope"></i></a>
+      <a href="https://instagram.com/cengiz.py" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+    </div>
+    
+    <div class="designer">Designed by H.Cengiz</div>
   </div>
   
-  <div class="designer">Designed by H.Cengiz</div>
+
+  <div id="selectionModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" id="closeModalBtn">&times;</span>
+      <h3>Lütfen bir dönem seçin</h3>
+      <p>Çalışmak istediğiniz soru kaynağını seçiniz:</p>
+      <div class="modal-buttons">
+        <button id="selectTerm1">1. Dönem</button>
+        <button id="selectTerm2">2. Dönem</button>
+      </div>
+    </div>
+  </div>
   
   <script src="script.js"></script>
 </body>

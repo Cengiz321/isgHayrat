@@ -1,8 +1,84 @@
+:root {
+  /* Light mode colors (default) */
+  --bg-color: white;
+  --text-color: black;
+  --button-bg: #f0f0f0;
+  --button-hover: #e0e0e0;
+  --button-border: #aaa;
+  --correct-bg: #c8f7c5;
+  --correct-border: green;
+  --wrong-bg: #f7c5c5;
+  --wrong-border: red;
+  --empty-bg: #c5e3f7;
+  --empty-border: blue;
+  --nav-bg: white;
+  --nav-border: #eee;
+  --progress-color: black;
+  --stat-text: black;
+  --social-icon: #555;
+  --social-icon-hover: #000;
+  --modal-bg: rgba(0, 0, 0, 0.7);
+  --modal-content-bg: white;
+  --close-btn-color: #555;
+  --close-btn-hover: #000;
+
+  --color-transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Dark mode colors */
+[data-theme="dark"] {
+  --bg-color: #121212;
+  --text-color: #e0e0e0;
+  --button-bg: #333;
+  --button-hover: #444;
+  --button-border: #555;
+  --correct-bg: #1b5e20;
+  --correct-border: #4caf50;
+  --wrong-bg: #7f0000;
+  --wrong-border: #f44336;
+  --empty-bg: #0d47a1;
+  --empty-border: #2196f3;
+  --nav-bg: #1e1e1e;
+  --nav-border: #333;
+  --progress-color: #e0e0e0;
+  --stat-text: #e0e0e0;
+  --social-icon: #aaa;
+  --social-icon-hover: #fff;
+  --modal-bg: rgba(0, 0, 0, 0.8);
+  --modal-content-bg: #1e1e1e;
+  --close-btn-color: #e0e0e0;
+  --close-btn-hover: #fff;
+}
+body,
+.container,
+.options button,
+.controls,
+.bottomInfo,
+.top-nav,
+#shuffleInputs,
+#questionText,
+#progress,
+.designer,
+.stat-item,
+.social-icon,
+label,
+.font-size-controls button,
+.nav-toggle i,
+.nav-options,
+.stats-reset,
+.quick-goto-buttons button,
+.modal,
+.modal-content,
+.close-btn,
+.modal-buttons button,
+.theme-toggle {
+  transition: var(--color-transition);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-
   user-select: none;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -11,22 +87,25 @@
 
 body {
   font-family: Arial, sans-serif;
-  background: white;
+  background: var(--bg-color);
+  color: var(--text-color);
   position: relative;
   min-height: 100vh;
 }
 
 .container {
+  position: relative;
   max-width: 900px;
   margin: 0 auto;
   padding: 20px;
   padding-bottom: 120px;
-  background: white;
+  background: var(--bg-color);
 }
 
 h2 {
   font-size: 1.3rem;
   margin-bottom: 15px;
+  color: var(--text-color);
 }
 
 .options button {
@@ -35,8 +114,9 @@ h2 {
   padding: 15px;
   width: 100%;
   font-size: 1.1rem;
-  border: 1px solid #ccc;
-  background: #eee;
+  border: 1px solid var(--button-border);
+  background: var(--button-bg);
+  color: var(--text-color);
   cursor: pointer;
   border-radius: 6px;
   word-break: break-word;
@@ -46,22 +126,22 @@ h2 {
 }
 
 .options button:hover {
-  background: #ddd;
+  background: var(--button-hover);
 }
 
 .options button.correct {
-  background-color: #c8f7c5;
-  border-color: green;
+  background-color: var(--correct-bg);
+  border-color: var(--correct-border);
 }
 
 .options button.wrong {
-  background-color: #f7c5c5;
-  border-color: red;
+  background-color: var(--wrong-bg);
+  border-color: var(--wrong-border);
 }
 
 .options button.empty {
-  background-color: #c5e3f7;
-  border-color: blue;
+  background-color: var(--empty-bg);
+  border-color: var(--empty-border);
 }
 
 .options button.locked {
@@ -74,8 +154,8 @@ h2 {
   bottom: 50px;
   left: 0;
   width: 100%;
-  background: white;
-  border-top: 1px solid #ccc;
+  background: var(--bg-color);
+  border-top: 1px solid var(--button-border);
   padding: 15px 0;
   display: flex;
   justify-content: center;
@@ -91,31 +171,47 @@ h2 {
   padding: 10px 25px;
   font-size: 1rem;
   border-radius: 6px;
-  border: 1px solid #aaa;
-  background: #f0f0f0;
+  border: 1px solid var(--button-border);
+  background: var(--button-bg);
+  color: var(--text-color);
   cursor: pointer;
   transition: all 0.2s;
 }
 
 .controls button:hover {
-  background: #e0e0e0;
+  background: var(--button-hover);
+}
+
+.bottomInfo {
+  position: fixed;
+  bottom: 0px;
+  left: 0;
+  height: 50px;
+  width: 100%;
+  background: var(--bg-color);
+  z-index: 100;
 }
 
 .top-nav {
   margin-bottom: 20px;
   font-size: 1rem;
+  background: var(--bg-color);
 }
 
 .top-nav input[type=number] {
   width: 60px;
   padding: 3px;
+  background: var(--button-bg);
+  border: 1px solid var(--button-border);
+  color: var(--text-color);
 }
 
 #infoText {
   font-size: 0.9rem;
-  color: #555;
+  color: var(--text-color);
   margin: 5px 0 10px;
   display: block;
+  opacity: 0.8;
 }
 
 #shuffleInputs {
@@ -123,9 +219,9 @@ h2 {
   margin-top: 10px;
   position: relative;
   z-index: 1;
-  background: white;
+  background: var(--nav-bg);
   padding: 10px;
-  border: 1px solid #eee;
+  border: 1px solid var(--nav-border);
   border-radius: 5px;
 }
 
@@ -141,8 +237,9 @@ h2 {
   padding: 4px 8px;
   font-size: 0.9rem;
   margin-right: 5px;
-  background: #f0f0f0;
-  border: 1px solid #aaa;
+  background: var(--button-bg);
+  border: 1px solid var(--button-border);
+  color: var(--text-color);
   border-radius: 4px;
   cursor: pointer;
 }
@@ -151,12 +248,14 @@ h2 {
   white-space: pre-wrap;
   word-break: break-word;
   line-height: 1.5;
+  color: var(--text-color);
 }
 
 #progress {
   font-weight: bold;
   font-size: 1.1rem;
   margin: 15px 0;
+  color: var(--progress-color);
 }
 
 .goto-container {
@@ -168,7 +267,7 @@ h2 {
   position: fixed;
   bottom: 10px;
   right: 10px;
-  color: #aaa;
+  color: var(--social-icon);
   font-size: 0.8rem;
   z-index: 101;
   user-select: none;
@@ -178,7 +277,7 @@ h2 {
 }
 
 .error-message {
-  color: red;
+  color: #ff4444;
   padding: 20px;
   border: 1px solid #ffcccc;
   background-color: #ffeeee;
@@ -198,6 +297,7 @@ h2 {
   display: flex;
   align-items: center;
   gap: 3px;
+  color: var(--stat-text);
 }
 
 .stat-label {
@@ -234,18 +334,19 @@ h2 {
 }
 
 .social-icon {
-  color: #555;
+  color: var(--social-icon);
   font-size: 1.5rem;
   transition: color 0.3s;
 }
 
 .social-icon:hover {
-  color: #000;
+  color: var(--social-icon-hover);
 }
 
 label {
   cursor: pointer;
   user-select: none;
+  color: var(--text-color);
 }
 
 input[type="checkbox"] {
@@ -267,9 +368,10 @@ button {
 .font-size-controls button {
   padding: 3px 8px;
   font-size: 0.9rem;
-  border: 1px solid #aaa;
+  border: 1px solid var(--button-border);
   border-radius: 4px;
-  background: #f0f0f0;
+  background: var(--button-bg);
+  color: var(--text-color);
 }
 
 .nav-toggle {
@@ -284,13 +386,14 @@ button {
 
 .nav-toggle i {
   transition: transform 0.3s ease;
-  color: #555;
+  color: var(--text-color);
 }
 
 .nav-options {
   transition: all 0.3s ease;
   overflow: hidden;
   max-height: 500px;
+  background: var(--bg-color);
 }
 
 .nav-options.collapsed {
@@ -302,8 +405,9 @@ button {
   margin-left: 10px;
   padding: 2px 8px;
   font-size: 0.8rem;
-  background: #f0f0f0;
-  border: 1px solid #aaa;
+  background: var(--button-bg);
+  border: 1px solid var(--button-border);
+  color: var(--text-color);
   border-radius: 4px;
 }
 
@@ -316,8 +420,90 @@ button {
 .quick-goto-buttons button {
   padding: 3px 8px;
   font-size: 0.9rem;
-  background: #f0f0f0;
-  border: 1px solid #aaa;
+  background: var(--button-bg);
+  border: 1px solid var(--button-border);
+  color: var(--text-color);
   border-radius: 4px;
   cursor: pointer;
+}
+.nav-options button {
+  padding: 3px 8px;
+  font-size: 0.9rem;
+  background: var(--button-bg);
+  border: 1px solid var(--button-border);
+  color: var(--text-color);
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 2px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--modal-bg);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: var(--modal-content-bg);
+  padding: 25px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--close-btn-color);
+}
+
+.close-btn:hover {
+  color: var(--close-btn-hover);
+}
+
+.modal-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.modal-buttons button {
+  padding: 12px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 6px;
+  background: var(--button-bg);
+  color: var(--text-color);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.modal-buttons button:hover {
+  background: var(--button-hover);
+}
+
+.theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: var(--text-color);
+  z-index: 103;
+  background: none;
+  border: none;
+  padding: 5px;
 }
